@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Jovan Sandhu (A01201367)'
+                echo 'Jovan Sandhu (A01201367) GROUP 39'
                 echo 'Installing the Requirements...'
                 sh 'pip install -r requirements.txt'
                 echo 'Requirement completed'
