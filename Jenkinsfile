@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Code Quantity') {
             steps {
-                sh 'ls | wc -l'
+                sh 'ls *.py | wc -l'
             }
         }
         stage('Test Program') {
             steps {
-                sh 'python test_book_manager.py'
+                sh 'python3 test_book_manager.py'
             }
         }
         stage('Package') {
