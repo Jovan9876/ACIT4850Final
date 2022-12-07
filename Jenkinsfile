@@ -3,7 +3,9 @@
 // ACIT4850 Final Exam pipeline
 pipeline {
     agent any
-
+    parameters {
+        string(defaultValue: '', description: 'Run Unit Tests', name: 'TEST')
+    }
     stages {
         stage('Build') {
             steps {
@@ -26,6 +28,9 @@ pipeline {
             }
         }
         stage('Test Program') {
+            when {
+                expression { params.TEST }
+            }
             steps {
                 sh 'python3 test_book_manager.py'
             }
